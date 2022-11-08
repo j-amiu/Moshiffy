@@ -9,9 +9,12 @@
     --border-radius: 30px;
 }
 
-*, *::after, *::before{
+*, 
+*::after, 
+*::before {
     box-sizing: border-box;
 }
+
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -32,8 +35,12 @@ html{
 body{
     color: var(--color-body);
     font-family: Inter, Arial, Helvetica, sans-serif;
-    font-size: 2.4rem;
+    font-size: 2rem;
     line-height: 1.5;
+}
+
+img {
+    width: 100%;
 }
 
 h1, 
@@ -213,7 +220,7 @@ a {
     font-size: 1.8rem;
     font-weight: 600;
     margin: 1rem 0;
-    padding: 2rem 3rem;
+    padding: 2rem 4vw;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
@@ -302,6 +309,7 @@ a {
     border: 0;
     flex-grow: 1;
     padding: 1.5rem 2rem;
+    width: 0;
 }
 
 .input-group .btn{
@@ -384,9 +392,6 @@ a {
     margin-bottom: 2rem;
 }
 
-.plan--popular {
-    transform: scale(1.1);
-}
 
 .plan--popular .card__header{
     position: relative;
@@ -412,6 +417,10 @@ a {
 @media screen and (min-width: 1024px){
     .plan__name{
         font-size: 1.4rem;
+    }
+
+    .plan--popular {
+        transform: scale(1.1);
     }
 
     .plan__price{
@@ -519,11 +528,17 @@ a {
 /* Testimonials */
 
 .testimonial{
-    padding: 4rem;
+    padding: 3rem;
+}
+
+.testimonial .quote {
+    margin: 2rem 0;
+    font-size: 110%;
 }
 
 .testimonial__image{
     position: relative;
+    margin: 0 3rem;
 }
 
 .testimonial__image > .icon-container{
@@ -532,18 +547,20 @@ a {
     top: 3rem;
 }
 
-.testimonial__image > img{
-    width: 100%;
-}
-
 @media screen and (min-width: 768px){
-    .testimonial .quote,
+    
     .testimonial .quote__author{
         font-size: 2.4rem;
     }
 
-    .testimonial .quote{
-        margin-left: 6rem;
+    .testimonial__image {
+        margin: 0;
+    }
+    
+    .testimonial .quote {
+        margin: 5rem 0 0 6rem;
+        font-size: 120%;
+        line-height: 1.5;
     }
 }
 
@@ -757,10 +774,11 @@ a {
 }
 
 .block-domain__prices {
+    color: var(--color-headings);
     display: grid;
     font-size: 2rem;
     font-weight: 600;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 6rem);
     justify-items: center;
     margin: 0 auto;
@@ -814,10 +832,6 @@ a {
 
 /* showcase Block */
 
-.block-showcase__image > img {
-    width: 100%;
-}
-
 @media screen and (min-width: 768px) {
 
     .block-showcase .grid {
@@ -838,6 +852,7 @@ a {
 
 .footer {
     background: #232323;
+    padding-top: 10rem;
 }
 
 .footer a {
@@ -859,8 +874,11 @@ a {
 }
 
 .footer__heading {
+    font-size: 2.5rem;
     font-weight: 600;
+    line-height: 1.5;
     text-transform: uppercase;
+
 }
 
 .footer__brand {
@@ -869,9 +887,7 @@ a {
 }
 
 .footer__brand img {
-    /* TODO: Consider refactoring and applying this to all images */
     max-width: 230px;
-    width: 100%;
 }
 
 .footer__copyright {
@@ -883,6 +899,11 @@ a {
 
 
 @media screen and (min-width: 768px) {
+
+    .footer {
+        font-size: 1.5rem;
+    }
+
     .footer__sections {
         grid-template-columns: repeat(auto-fit, minmax(10rem,1fr) );
     }
@@ -912,4 +933,10 @@ a {
     .footer__heading {
         font-size: 1.6rem;
     }
+}
+
+/* Sign-up Callout */
+
+.callout-signup {
+    transform: translateY(5rem);
 }
